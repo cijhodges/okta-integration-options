@@ -214,7 +214,7 @@ class Main
             if ( 
                 $this->force_auth 
                 || (
-                    $id && in_array( $id, $this->pages )
+                    $id && in_array( $id, $this->pages ) && !is_home()
                 )
             ) {
                 $login_page = '/wp-login.php';

@@ -3,7 +3,7 @@
 	* Plugin Name: Okta Integration Options
 	* Plugin URI: https://github.com/cijhodges/okta-integration-options
 	* Description: Force users to authenticate through Okta Single Sign-On for the entirety or parts of your website.
-	* Version: 0.0.2
+	* Version: 0.0.3
 	* Author: Compassion Web & Interactive
 	* Author URI: https://www.compassion.com/
 */
