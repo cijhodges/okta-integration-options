@@ -209,6 +209,20 @@ class Main
 
         $id = get_the_ID();
         $page = home_url( $wp->request );
+        $hasDomain = false;
+
+        if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+            if ( in_array( $_SERVER['HTTP_REFERER'], $this->domains ) ) {
+                $hasDomain = true;
+            } else {
+                foreach ( $this->domains as $domain ) {
+                    if ( 
+                        strpos( $domain, $_SERVER['HTTP_REFERER'] ) >= 0
+                        || strpos( $_SERVER['HTTP_REFERE'], $domain ) >= 0
+                    ) $hasDomain = true;
+                }
+            }
+        }
 
         if ( !is_user_logged_in() ) {
             if ( 
@@ -224,11 +238,10 @@ class Main
             }
 
             return false;
-        }        
+        }
 
         if ( 
-            isset( $_SERVER['HTTP_REFERER'] )
-            && in_array( $_SERVER['HTTP_REFERER'], $this->domains )
+            $hasDomain
             && isset( $_COOKIE['oktaIntegrationLastPage'] ) 
             && $page !== $_COOKIE['oktaIntegrationLastPage']
         ) {

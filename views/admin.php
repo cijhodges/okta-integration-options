@@ -55,7 +55,7 @@
                             ?>
                         </div>
                         <p class="description" id="domains-description">
-                            Add as many domains as you need.
+                            Add as many domains as you need. Please include the protocol (http://, https://, etc.);
                         </p>
                     </td>
                 </tr>
