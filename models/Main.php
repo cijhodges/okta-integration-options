@@ -48,13 +48,6 @@ class Main
         global $pagenow;
         global $wpdb;
 
-        require_once 'Updater.php';
-
-        $updater = new \OktaIntegrationOptionsUpdater( __FILE__ );
-        $updater->set_username( 'cijhodges' ); // set username
-        $updater->set_repository( 'okta-integration-options' ); // set repo
-        $updater->initialize();
-
         switch ( $_SERVER['REQUEST_METHOD'] ) {
             case 'GET':
                 add_action( 'admin_menu', function() {
